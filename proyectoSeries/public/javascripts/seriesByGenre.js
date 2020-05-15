@@ -23,12 +23,12 @@ window.onload = function () {
 
         for (var i = 0; i < arraySeries.length; i++) {
           if (arraySeries[i].backdrop_path == null) {
-            var div = '<div><a href="detalle.html?serieId='+arraySeries[i].id+'"> <h3>'+arraySeries[i].name+'</h3>'
+            var div = '<div><a href="/detalle?serieId='+arraySeries[i].id+'"> <h3>'+arraySeries[i].name+'</h3>'
             div+= '<img src="img/noAvailable.png" alt="poster"></a></div>'
             grillaSeries.innerHTML+= div
 
           }else {
-            var div = '<div><a href="detalle.html?serieId='+arraySeries[i].id+'"> <h3>'+arraySeries[i].name+'</h3>'
+            var div = '<div><a href="/detalle?serieId='+arraySeries[i].id+'"> <h3>'+arraySeries[i].name+'</h3>'
             div+= '<img src="'+poster+arraySeries[i].backdrop_path+'" alt="poster"> </a></div>'
             grillaSeries.innerHTML+= div
 

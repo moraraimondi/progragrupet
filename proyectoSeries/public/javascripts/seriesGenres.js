@@ -21,7 +21,7 @@ window.onload = function () {
         var listaGeneros = document.querySelector(".lista-generos")
         for (var i = 0; i < arrayGeneros.length; i++) {
           var li = '<li>'
-          li  +=  '<h2><a class="genre" href="seriesByGenre.html?genreId='+arrayGeneros[i].id+'" value="">'+ arrayGeneros[i].name+ '</a></h2>'
+          li  +=  '<h2><a class="genre" href="/seriesByGenre?genreId='+arrayGeneros[i].id+'" value="">'+ arrayGeneros[i].name+ '</a></h2>'
           li+= '</li>'
         listaGeneros.innerHTML += li
         }

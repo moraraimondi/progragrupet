@@ -59,7 +59,7 @@ if (query != "") {
       div+= '<a href="/detalle?serieId='+ data.results[i].id +'">'
       div+= '<h2>'+data.results[i].name+ '</h2>'
       if (data.results[i].poster_path == null) {
-        div+= '<img src="img/noAvailable.png" alt="imagen de serie">'
+        div+= '<img src="/images/noAvailable.png" alt="imagen de serie">'
 
       }else {
         div+= '<img src="'+poster+data.results[i].poster_path+'" alt="imagen de serie">'

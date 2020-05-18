@@ -20,7 +20,7 @@ window.onload=function () {
         console.log(data);
         for (var i = 0; i < data.results.length; i++) {
           // console.log(data.results[i]);
-        contenedor.innerHTML += '<li class="uk-width-3-4"><a href="/detalle?serieId='+data.results[i].id+'"><div class="uk-panel"><img src="'+ poster +  data.results[i].backdrop_path + '" alt=""><div class="uk-position-bottom-center uk-panel"><h3>'+data.results[i].name+'</h3></div></div></a></li>'
+        contenedor.innerHTML += '<li class="uk-width-3-4"><a href="/series/detalle?serieId='+data.results[i].id+'"><div class="uk-panel"><img src="'+ poster +  data.results[i].backdrop_path + '" alt=""><div class="uk-position-bottom-center uk-panel"><h3>'+data.results[i].name+'</h3></div></div></a></li>'
         }
 
 

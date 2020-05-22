@@ -1,0 +1,13 @@
+* {
+    background-color: white;
+}
+
+.uk-button{
+    background-color:rgb(196, 40, 78);
+}
+
+.uk-button:hover{
+    background-color: white;
+    color: rgb(196, 40, 78);
+
+}

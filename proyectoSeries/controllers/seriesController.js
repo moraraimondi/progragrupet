@@ -17,6 +17,9 @@ let seriesController = {
     porGenero: function(req,res){
         res.render('seriesByGenre')
     },
+    login: function(req,res){
+        res.render('login')
+    }
 }
 
 module.exports = seriesController;

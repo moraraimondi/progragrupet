@@ -8,6 +8,6 @@ router.get('/generos', seriesController.generos);
 router.get('/buscador', seriesController.buscador);
 router.get('/resultado', seriesController.resultado);
 router.get('/detalle', seriesController.detalle);
-router.get('/porGenero', seriesController.porGenero)
+router.get('/porGenero', seriesController.porGenero);
 
 module.exports = router;

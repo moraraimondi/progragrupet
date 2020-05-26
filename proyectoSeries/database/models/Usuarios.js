@@ -1,8 +1,7 @@
 module.exports = (sequelize, dataTypes) => {
     let cols = {
         id_usuarios: {type: dataTypes.INTEGER, primaryKey:true, autoIncrement:true,},
-        nombre: {type: dataTypes.STRING},
-        apellido: {type: dataTypes.STRING},
+        usuario: {type: dataTypes.STRING},
         email: {type: dataTypes.STRING},
         password: {type: dataTypes.STRING},
         birthday: {type: dataTypes.DATE},

@@ -24,15 +24,17 @@ let seriesController = {
     login: function(req,res){
         res.render('login') // lleva al login
     },
-    validar: function(req, res){ // crea el usuario con lo que se llena en el form
-        let encriptada = bcrypt.hashSync(req.body.password, 10); //encripta los datos de la password
+    crearUsuario: function(req, res){ // crea el usuario con lo que se llena en el form
+        //let encriptada = bcrypt.hashSync(req.body.password, 10); //encripta los datos de la password
         let usuario ={ //toma los datos del form
             usuario: req.body.usuario,
             email: req.body.email,
-            password: encriptada,
+            password: req.body.password,
             birthday: req.body.birthday
         }
-        db.Usuarios.create(usuario) // crea los usuarios en la bd
+        console.log(usuario);
+        
+        db.usuarios.create(usuario) // crea los usuarios en la bd
         res.redirect('/series/home') // te lleva a home cuando apretas el boton
     }
 }

@@ -9,6 +9,6 @@ router.get('/resultado', seriesController.resultado);
 router.get('/detalle', seriesController.detalle);
 router.get('/porGenero', seriesController.porGenero);
 router.get('/login', seriesController.login); //MUESTRA el login
-router.post('/login', seriesController.validar);
+router.post('/login', seriesController.crearUsuario);
 
 module.exports = router;

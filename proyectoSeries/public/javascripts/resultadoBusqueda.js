@@ -56,7 +56,7 @@ if (query != "") {
 
     for (var i = 0; i < data.results.length; i++) {
       var div = '<div>'
-      div+= '<a href="/detalle?serieId='+ data.results[i].id +'">'
+      div+= '<a href="/series/detalle?serieId='+ data.results[i].id +'">'
       div+= '<h2>'+data.results[i].name+ '</h2>'
       if (data.results[i].poster_path == null) {
         div+= '<img src="/images/noAvailable.png" alt="imagen de serie">'

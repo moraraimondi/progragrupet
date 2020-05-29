@@ -10,5 +10,7 @@ router.get('/detalle', seriesController.detalle);
 router.get('/porGenero', seriesController.porGenero);
 router.get('/login', seriesController.login); //MUESTRA el login
 router.post('/login', seriesController.crearUsuario);
+router.get('/perfil', seriesController.perfil);
+router.get('/usuarios', seriesController.usuarios);
 
 module.exports = router;

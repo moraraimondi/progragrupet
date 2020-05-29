@@ -36,6 +36,12 @@ let seriesController = {
         
         db.usuarios.create(usuario) // crea los usuarios en la bd
         res.redirect('/series/home') // te lleva a home cuando apretas el boton
+    },
+    perfil: function(req, res){
+        res.render('perfilResenias') // lleva al perfil del usuario
+    },
+    usuarios: function(req, res){
+        res.render('buscadorUsuarios')
     }
 }
 

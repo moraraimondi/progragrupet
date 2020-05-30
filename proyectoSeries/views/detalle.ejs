@@ -64,10 +64,40 @@
           </div>
         </div>
       </div>
+      <div class="padre">
+        <ul class="uk-comment-list">
+            <ul>
+              <% for(i = 0; i < reviews.length; i++){ %>
+                <li>
+                  <div class="hijo">
+                    <article class="uk-comment uk-comment-primary uk-visible-toggle" tabindex="-1">
+                        <header class="uk-comment-header uk-position-relative">
+                            <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                                <div class="uk-width-auto">
+                                  <img src="../public/images/avatar.png" width="80" height="80" alt="">
+                                </div>
+                                <div class="uk-width-expand">
+                                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Usuario</a></h4>
+                                    <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#"><%=reviews[i].createdAt%></a></p>
+                                </div>
+                            </div>
+                           <!-- <div class="uk-position-top-right uk-position-small uk-hidden-hover"><a class="uk-link-muted" href="/series/login">Lleva al login</a></div> -->
+                        </header>
+                        <div class="uk-comment-body">
+                            <p><%=reviews[i].texto%></p>
+                        </div>
+                    </article>
+                  </div>
+                </li>
+              <%}%>
+            </ul>
+          </ul>
+        </div>
 <div class="form">
   <div class="mini">
-  <form action="" method="">
+  <form action="/series/detalle" method="POST">
     <h2>Dejá tu reseña</h2>
+    <input type="hidden" name="id_serie" value="<%=id_serie%>">
     <div class="uk-margin">
         <div class="uk-inline uk-width-1-1">
             <input class="uk-input uk-form-large" placeholder= "Email" type="text" name="email">
@@ -103,33 +133,7 @@
 </div>
 
 
-<div class="padre">
-    <ul class="uk-comment-list">
-        <ul>
-            <li>
-              <div class="hijo">
-                <article class="uk-comment uk-comment-primary uk-visible-toggle" tabindex="-1">
-                    <header class="uk-comment-header uk-position-relative">
-                        <div class="uk-grid-medium uk-flex-middle" uk-grid>
-                            <div class="uk-width-auto">
-                              <img src="../public/images/avatar.png" width="80" height="80" alt="">
-                            </div>
-                            <div class="uk-width-expand">
-                                <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Usuario</a></h4>
-                                <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#">Fecha</a></p>
-                            </div>
-                        </div>
-                       <!-- <div class="uk-position-top-right uk-position-small uk-hidden-hover"><a class="uk-link-muted" href="/series/login">Lleva al login</a></div> -->
-                    </header>
-                    <div class="uk-comment-body">
-                        <p>Comentario</p>
-                    </div>
-                </article>
-              </div>
-              </li>
-        </ul>
-      </ul>
-    </div>
+
       <br>
       <br>
       <br>

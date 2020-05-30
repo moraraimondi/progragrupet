@@ -4,36 +4,36 @@ header nav {
 	height: 85px;
 	background-color: white;
 	z-index: 999;
-  box-shadow: -2px -2px 5px white, 2px 2px 5px white;
+	box-shadow: -2px -2px 5px white, 2px 2px 5px white;
 	position: fixed;
-  top: 0;
-  left: 0;
+	top: 0;
+	left: 0;
 }
-header nav ul.logo-list {
-	float: left;
-	padding-left: 0;
-	margin-top: -5px;
+
+li.menu-item{
+	width: 10%;
+	justify-content: space-around;
 }
+	
 header nav ul li {
 	list-style: none;
+	margin-top: -5px;
 }
-header nav ul li.logo img {
+/*header nav ul li.logo img {
   max-width: 250px;
-}
+}*/
 header nav ul.ul-menu {
-	float: right;
-	width: 70%;
+	display: flex;
 	margin-top: 25px;
 }
 header nav ul.ul-menu li.menu-item {
-	float: left;
-  width: 13%;
 	margin-right: 2%;
-  text-align: center;
+	text-align: right;
 }
 
 header nav ul.ul-menu li.search {
-	width: 38%;
+	width: 20%;
+
 }
 
 header nav ul.ul-menu li.li-menu:hover {

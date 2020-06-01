@@ -37,11 +37,11 @@ let seriesController = {
         res.render('login') // lleva al login
     },
     crearUsuario: function(req, res){ // crea el usuario con lo que se llena en el form
-        //let encriptada = bcrypt.hashSync(req.body.password, 10); //encripta los datos de la password
+        let encriptada = bcrypt.hashSync(req.body.password, 10); //encripta los datos de la password
         let usuario ={ //toma los datos del form
             usuario: req.body.usuario,
             email: req.body.email,
-            password: req.body.password,
+            password: encriptada,
             birthday: req.body.birthday
         }
         console.log(usuario);
@@ -70,7 +70,7 @@ let seriesController = {
                   }
                   console.log(review)
                   db.reviews.create(review)
-                res.redirect('/series/home')
+                res.redirect('/series/detalle?serieId=' + req.body.id_serie)
           } else{
             return res.send("error")
           }

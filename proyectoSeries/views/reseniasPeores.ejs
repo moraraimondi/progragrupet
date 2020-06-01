@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (todo.length == 0) { %>
+        <h2 style="color: white;"><strong>No hay reseñas</strong></h2>
+      <% } else { %>
+      <h2 id="titulos"><strong>Las mejores reseñas:</strong></h2>
+      <% for(let i = 0; i < todo.length; i++) { %>
+              <div>
+                <div class="uk-card uk-card-default uk-width-1-2@m">
+                  <div class="uk-card-header">
+                      <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-expand">
+                          <h3 class="uk-card-title uk-margin-remove-bottom">Quieres saber cual peli es?:</h3>
+                          <p class="uk-text-meta uk-margin-remove-top"><a href="/info_serie?id=<%= todo[i].idseries%>">Entra y enterate!</a></p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Description:</h3>
+                    <p class="uk-text-meta uk-margin-remove-top"><strong><%= todo[i].texto%></strong></p>
+                  </div>
+                  <div class="uk-card-body">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Rating:</h3>
+                    <p class="uk-text-meta uk-margin-remove-top"><strong><%= todo[i].rating%></strong></p>
+                  </div>
+                  <div class="uk-card-footer">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">Publicado el:</h3>
+                    <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00"><p><strong><%= todo[i].createdAt%></strong></time></p>
+                  </div>
+                </div>
+                
+                  </div>
+      <% } %>
+      <% } %>
+    
+</body>
+</html>

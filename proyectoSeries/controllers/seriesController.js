@@ -96,7 +96,53 @@ let seriesController = {
         .then(function(reviews){
             res.render('misResenias', {reviews:reviews})
         })
-    }
+    },
+    editar: function(req,res){
+        let idreviews = req.query.idReview
+        res.render("editar", {idreviews: idreviews})
+    },
+    confirmarEdit: function(req,res){
+        moduloLogin.validar(req.body.email, req.body.password)
+        .then(function(resultado){
+            if(resultado != null){
+            id = req.body.idreviews;
+            db.reviews.update({
+            texto: req.body.texto,
+            rating: req.body.rating,
+            updatedAt: db.sequelize.literal("CURRENT_DATE"),
+        },
+        {
+            where: {idreviews: id}
+        })
+        .then(function(){
+            res.redirect("/series/misResenias")
+        })
+            }else{
+                res.render("editar")
+            }
+        }) 
+    },
+    borrar: function(req,res){
+        moduloLogin.validar(req.body.email, req.body.password)
+        .then(function(resultado){
+            if(resultado != null){
+            id = req.body.idreviews;
+            db.reviews.destroy(
+        {
+            where: {idreviews: id}
+        })
+        .then(function(){
+            res.redirect("/series/misResenias")
+        })
+            }else{
+                res.render("borrar")
+            }
+        }) 
+    },
+    borrarLogIn: function(req,res){
+        let idreviews = req.query.idReview
+        res.render("borrar", {idreviews: idreviews})
+    },
 
 
 }

@@ -15,5 +15,8 @@ router.get('/perfil', seriesController.perfil);
 router.get('/usuarios', seriesController.usuarios);
 router.get('/misResenias', seriesController.misReseniasLogin);
 router.post('/misResenias', seriesController.misResenias);
-
+router.get('/editar', seriesController.editar);
+router.post('/editar', seriesController.confirmarEdit);
+router.get('/borrar', seriesController.borrarLogIn);
+router.post('/borrar', seriesController.borrar)
 module.exports = router;

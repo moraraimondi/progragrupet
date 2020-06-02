@@ -28,5 +28,6 @@ router.get('recientes', reseniasController.recientes);
 
 router.get('/usuarios', seriesController.usuarios);
 router.get('/resultadoUsuarios', seriesController.resultadoUsuarios);
+router.get('/detalleUsuarios', seriesController.detalleUsuarios);
 
 module.exports = router;

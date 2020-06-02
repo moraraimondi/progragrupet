@@ -11,7 +11,7 @@
     <%for(i=0; i< resultado.length; i++){%>
         <div class="resultado usuarios">
             <div class="mini">
-                <p><%= resultado[i].usuario %></p>
+                <a href="/series/detalleUsuarios?userId=<%=resultado[i].id_usuarios %>"><p><%= resultado[i].usuario %></p></a>
             </div>
             <div class="mini">
                 <p><%= resultado[i].email %></p>

@@ -39,13 +39,13 @@
             <img src="/images/avatar.png" alt="" height="80" width="80">
         </div>
         <div class="hijos">
-            <h2>Nombre</h2>
+            <h2><%=usuario.usuario %></h2>
         </div>
         <div class="hijos">
-            <h2>Email</h2>
+            <h2><%=usuario.email %></h2>
         </div>
         <div class="hijos">
-            <h2>Birthday</h2>
+            <h2><%=usuario.birthday %></h2>
         </div>
 
     </div>
@@ -53,7 +53,9 @@
     <div class="resenias">
         <h2> Tus reseñas</h2>
         <ul>
-            <li>Acá van las reseñas</li>
+            <% for(i = 0; i < usuario.reviews.length; i++){ %>
+            <li><%=usuario.reviews[i].texto %></li>
+           <% } %>
         </ul>
     </div>
 </body>

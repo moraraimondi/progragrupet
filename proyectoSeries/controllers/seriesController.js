@@ -22,10 +22,14 @@ let seriesController = {
           where:{
               idseries: id_serie,
           },
-       })
+          include: [{
+           association: "usuarios"
+          }]
+        })
         .then(function(reviews){     
-          console.log(reviews);
+            console.log(reviews);
            
+        
           var id_serie = req.query.serieId
         res.render("detalle", {reviews: reviews, id_serie: id_serie})
         })
@@ -154,12 +158,29 @@ let seriesController = {
         })
         .then(function(resultado){
             if (resultado.length >0) {
+                console.log(resultado);
+                
                 res.render('resultadoUsuarios', {resultado:resultado})
             } else {
                 res.render('resultadosFail')
             }
         })
-    }
+    },
+    detalleUsuarios: function(req,res){
+        let id = req.query.userId
+        db.usuarios.findOne({
+            where:{
+                id_usuarios: id,
+            },
+            include: [{
+             association: "reviews"
+            }]
+          })
+          .then(function(usuario){     
+              console.log(usuario)         
+          res.render("perfilResenias", {usuario: usuario})
+          })
+    },
 
     
 

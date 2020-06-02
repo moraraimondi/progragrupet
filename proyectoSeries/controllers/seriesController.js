@@ -50,10 +50,7 @@ let seriesController = {
         res.redirect('/series/home') // te lleva a home cuando apretas el boton
     },
     perfil: function(req, res){
-        res.render('perfilResenias') // lleva al perfil del usuario
-    },
-    usuarios: function(req, res){
-        res.render('buscadorUsuarios')
+        res.render('perfilResenias')
     },
     nuevaReview: function(req,res){
         moduloLogin.validar(req.body.email, req.body.password)
@@ -143,7 +140,28 @@ let seriesController = {
         let idreviews = req.query.idReview
         res.render("borrar", {idreviews: idreviews})
     },
+    usuarios: function(req,res){
+        res.render('buscadorUsuarios')
+    },
+    resultadoUsuarios: function(req,res){
+        db.usuarios.findAll({
+            where: {
+                [op.or]: [
+                    {email: {[op.like]: '%' + req.query.searchUser + '%'}},
+                    {usuario: {[op.like]: '%' + req.query.searchUser + '%'}}
+                ]
+            }
+        })
+        .then(function(resultado){
+            if (resultado.length >0) {
+                res.render('resultadoUsuarios', {resultado:resultado})
+            } else {
+                res.render('resultadosFail')
+            }
+        })
+    }
 
+    
 
 }
 

@@ -6,6 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hola</h1>
+
+    <h1></h1>
+    <%for(i=0; i< resultado.length; i++){%>
+        <div class="resultado usuarios">
+            <div class="mini">
+                <p><%= resultado[i].usuario %></p>
+            </div>
+            <div class="mini">
+                <p><%= resultado[i].email %></p>
+            </div>
+            <div class="mini">
+                <p><%= resultado[i].birthday%></p>
+            </div>
+        </div>
+    <% } %>
 </body>
 </html>

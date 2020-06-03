@@ -28,8 +28,6 @@ let seriesController = {
         })
         .then(function(reviews){     
             console.log(reviews);
-           
-        
           var id_serie = req.query.serieId
         res.render("detalle", {reviews: reviews, id_serie: id_serie})
         })
@@ -46,13 +44,18 @@ let seriesController = {
             usuario: req.body.usuario,
             email: req.body.email,
             password: encriptada,
-            birthday: req.body.birthday
+            birthday: req.body.birthday,
+            genero_fav: req.body.genero_fav,
+            serie_fav: req.body.serie_fav,
         }
         console.log(usuario);
         
         db.usuarios.create(usuario) // crea los usuarios en la bd
         res.redirect('/series/home') // te lleva a home cuando apretas el boton
     },
+    genero_fav: function (req, res) {
+		var genero_fav = req.body.genero_fav;
+	},
     perfil: function(req, res){
         res.render('perfilResenias')
     },
@@ -180,10 +183,7 @@ let seriesController = {
               console.log(usuario)         
           res.render("perfilResenias", {usuario: usuario})
           })
-    },
-
-    
-
+    }
 }
 
 module.exports = seriesController;

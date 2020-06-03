@@ -19,6 +19,20 @@
             <div class="mini">
                 <p><%= resultado[i].birthday%></p>
             </div>
+            <div class="mini">
+                <% if(resultado[i].genero_fav == null){%>
+                    <p>No tengo género favorito</p>
+                <% } else {%>
+                <a href="/series/porGenero?genreId=<%=resultado[i].genero_fav %>"><p>Género Favorito</p></a>
+                <% } %>
+            </div>
+            <div class="mini">
+                <% if(resultado[i].serie_fav == null){%>
+                    <p>No tengo serie favorita</p>
+                <% } else {%>
+                <a href="/series/resultado?query=<%=resultado[i].serie_fav %>"><p>Serie Favorita</p></a>
+                <% } %>
+            </div>
         </div>
     <% } %>
 </body>

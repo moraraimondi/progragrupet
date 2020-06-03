@@ -47,6 +47,20 @@
         <div class="hijos">
             <h2><%=usuario.birthday %></h2>
         </div>
+        <div class="mini">
+            <% if(usuario.genero_fav == null){%>
+                <p>No tengo género favorito</p>
+            <% } else {%>
+            <a href="/series/porGenero?genreId=<%=usuario.genero_fav %>"><p>Género Favorito</p></a>
+            <% } %>
+        </div>
+        <div class="mini">
+            <% if(usuario.serie_fav == null){%>
+                <p>No tengo serie favorita</p>
+            <% } else {%>
+            <a href="/series/resultado?query=<%=usuario.serie_fav %>"><p>Serie Favorita</p></a>
+            <% } %>
+        </div>
 
     </div>
 

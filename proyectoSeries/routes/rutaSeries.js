@@ -10,8 +10,11 @@ router.get('/resultado', seriesController.resultado);
 router.get('/detalle', seriesController.detalle);
 router.post('/detalle', seriesController.nuevaReview);
 router.get('/porGenero', seriesController.porGenero);
+
 router.get('/login', seriesController.login); 
 router.post('/login', seriesController.crearUsuario);
+router.post('/login', seriesController.genero_fav);
+
 router.get('/perfil', seriesController.perfil);
 
 router.get('/misResenias', seriesController.misReseniasLogin);

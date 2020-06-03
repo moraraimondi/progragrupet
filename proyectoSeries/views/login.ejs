@@ -17,6 +17,7 @@
     <script src="/javascripts/uikit-icons.min.js" ></script>
     <script src="/javascripts/uikit.min.js" ></script>
     <script src="/javascripts/home.js" ></script>
+    <script src="/javascripts/generosFavoritos.js" ></script>
 </head>
 <body>
     <header>
@@ -65,6 +66,19 @@
                                         <input class="uk-input uk-form-large" placeholder="Password" type="password" name="password">	
                                     </div>
                                 </div>
+                                <div class="uk-margin">
+                                    <div class="uk-inline uk-width-1-1">
+                                       <select class="uk-input uk-form-large" name="genero_fav"  placeholder="Seleccioná tu género favorito">
+                                        <optgroup label="Seleccioná tu género favorito" id="genero">
+                                        <!--aca trae js los options-->
+                                    </optgroup>
+                                       </select>
+                                    </div>
+                                </div>
+                                <div class="uk-margin">
+                                    <div class="uk-inline uk-width-1-1">
+                                        <input class="uk-input uk-form-large" placeholder="Serie Favorita" type="text" name="serie_fav">	
+                                    </div>
                                 <div class="uk-margin">
                                     <div class="uk-inline uk-width-1-1">
                                         <input class="uk-input uk-form-large" placeholder= "Fecha de nacimiento" type="date" name="birthday">

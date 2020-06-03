@@ -5,6 +5,8 @@ module.exports = (sequelize, dataTypes) => {
         email: {type: dataTypes.STRING},
         password: {type: dataTypes.STRING},
         birthday: {type: dataTypes.DATE},
+        genero_fav: {type: dataTypes.INTEGER},
+        serie_fav: {type: dataTypes.STRING}
     };
     let config = {
         tableName: "usuarios",

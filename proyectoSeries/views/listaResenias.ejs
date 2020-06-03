@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nerfli</title>
+
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/listaResenias.css">
+    <link rel="stylesheet" href="/stylesheets/uikit.min.css">
+
 </head>
 <body>
-    <a href="/series/mejores"><button>Mejores</button></a>
-    <a href="/series/peores"><button>Peores</button></a>
-    <a href="/series/recientes"><button>Recientes</button></a>
-
+      <!--Include del header-->
+  <%-include('./partials/header.ejs') %>
+  <!--Include del header-->
+<main class="lista">
+    <h1>Descubrí las reseñas de nuestra comunidad</h1>
+    <div class="papi">
+        <div class="mini">
+            <a href="/series/mejores"><button>Mejores</button></a>
+        </div>
+        <div class="mini">
+            <a href="/series/peores"><button>Peores</button></a>
+        </div>
+        <div class="mini">
+            <a href="/series/recientes"><button>Más recientes</button></a>
+        </div>
+    </div>
+    
+</main>
 </body>
 </html>

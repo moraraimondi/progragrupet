@@ -1,0 +1,10 @@
+main{
+    margin-top: 85px;
+}
+
+img.avatar{
+    float: left;
+    margin-left: 4px;
+    height: 250px;
+    width: 250px;
+}

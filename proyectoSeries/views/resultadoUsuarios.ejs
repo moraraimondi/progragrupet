@@ -3,13 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <title>Nerfli</title>
+
+    <link rel="stylesheet" href="/stylesheets/resultadoUsuarios.css">
 </head>
 <body>
 
-    <h1></h1>
+    <h1 class="titulo">Encontramos estos resultados</h1>
+    <div class="labels">
+        <div class="mini-labels">
+            <p>Nombre</p>
+        </div>
+        <div class="mini-labels">
+            <p>Email</p>
+        </div>
+        <div class="mini-labels">
+            <p>Cumpleaños</p>
+        </div>
+        <div class="mini-labels">
+            <p>Género favorito</p>
+        </div>
+        <div class="mini-labels">
+            <p>Serie favorita</p>
+        </div>
+    </div>
     <%for(i=0; i< resultado.length; i++){%>
-        <div class="resultado usuarios">
+        <div class="resultado-usuarios">
             <div class="mini">
                 <a href="/series/detalleUsuarios?userId=<%=resultado[i].id_usuarios %>"><p><%= resultado[i].usuario %></p></a>
             </div>

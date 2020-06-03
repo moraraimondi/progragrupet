@@ -26,8 +26,8 @@ router.post('/borrar', seriesController.borrar)
 
 router.get('/lista', reseniasController.listaResenias);
 router.get('/mejores', reseniasController.mejores);
-router.get('peores', reseniasController.peores);
-router.get('recientes', reseniasController.recientes);
+router.get('/peores', reseniasController.peores);
+router.get('/recientes', reseniasController.recientes);
 
 router.get('/usuarios', seriesController.usuarios);
 router.get('/resultadoUsuarios', seriesController.resultadoUsuarios);

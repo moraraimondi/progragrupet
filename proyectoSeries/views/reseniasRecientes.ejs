@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nerfli</title>
+
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/listaResenias.css">
+    <link rel="stylesheet" href="/stylesheets/uikit.min.css">
 </head>
 <body>
+     <!--Include del header-->
+     <%-include('./partials/header.ejs') %>
+     <!--Include del header-->
     <% if (todo.length == 0) { %>
         <h2 style="color: white;"><strong>No hay reseñas</strong></h2>
       <% } else { %>
       <h2 id="titulos"><strong>Las mejores reseñas:</strong></h2>
       <% for(let i = 0; i < todo.length; i++) { %>
-              <div>
+              <div class="grande">
                 <div class="uk-card uk-card-default uk-width-1-2@m">
                   <div class="uk-card-header">
                       <div class="uk-grid-small uk-flex-middle" uk-grid>
                         <div class="uk-width-expand">
-                          <h3 class="uk-card-title uk-margin-remove-bottom">Quieres saber cual peli es?:</h3>
-                          <p class="uk-text-meta uk-margin-remove-top"><a href="/info_serie?id=<%= todo[i].idseries%>">Entra y enterate!</a></p>
+                          <a href="/series/detalle?serieId=<%= todo[i].idseries%>"><h3 class="uk-card-title uk-margin-remove-bottom" id="hola">Quieres saber cual peli es?</h3></a>
                         </div>
                       </div>
                   </div>
@@ -36,6 +42,8 @@
                 </div>
                 
                   </div>
+                  <br>
+                  <br>
       <% } %>
       <% } %>
     

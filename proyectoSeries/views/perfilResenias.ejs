@@ -6,7 +6,8 @@
     <title>Nerfli</title>
 
     <link rel="stylesheet" href="/stylesheets/header.css">
-    <link rel="stylesheet" href="/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/perfiles.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/uikit.min.css">
 
     <script src="/javascripts/uikit-icons.min.js" ></script>
@@ -14,38 +15,26 @@
     <script src="/javascripts/home.js" ></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul class="logo-list">
-                <li class="logo"> <img src="img/dh.png" alt=""> </li>
-            </ul>
-            <ul class="ul-menu">
-                <li class="menu-item home"><a class="color-violet" href="/series/home">Inicio</a></li>
-                <li class="menu-item"><a class="color-violet" href="/series/generos">Géneros</a></li>
-                <li class="menu-item"><a class="color-violet" href="/series/buscador">Buscador</a></li>
-                <li class="menu-item"><a class="color-violet" href="/series/login">Registrate</a></li>
-                <li class="menu-item search">
-                    <form class="" action="/series/resultado" method="GET">
-                        <input class="input-search" type="text" name="query" value="">
-                        <button class="btn-search" type="submit" name="">Buscar</button>
-                    </form>
-                </li>
-
-            </ul>
-        </nav>
-    </header>
+       <!--Include del header-->
+  <%-include('./partials/header.ejs') %>
+  <!--Include del header-->
+<main>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="papi">
         <div class="hijos">
-            <img src="/images/avatar.png" alt="" height="80" width="80">
+            <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png" alt="" class="avatar">
         </div>
         <div class="hijos">
-            <h2><%=usuario.usuario %></h2>
+            <p>Usuario: <%=usuario.usuario %></p>
         </div>
         <div class="hijos">
-            <h2><%=usuario.email %></h2>
+            <p>Email: <%=usuario.email %></p>
         </div>
         <div class="hijos">
-            <h2><%=usuario.birthday %></h2>
+            <p>Cumpleaños: <%=usuario.birthday %></p>
         </div>
         <div class="mini">
             <% if(usuario.genero_fav == null){%>
@@ -61,16 +50,23 @@
             <a href="/series/resultado?query=<%=usuario.serie_fav %>"><p>Serie Favorita</p></a>
             <% } %>
         </div>
-
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="resenias">
         <h2> Tus reseñas</h2>
         <ul>
             <% for(i = 0; i < usuario.reviews.length; i++){ %>
-            <li><%=usuario.reviews[i].texto %></li>
+                <% if(usuario.reviews[i].texto == null){%>
+                    <p>No tengo reseñas</p>
+                    <% } else {%>
+                        <a href="/series/detalle?serieId=<%=usuario.reviews[i].idseries %>"><li><%=usuario.reviews[i].texto %></li></a>
+                    <% } %>
            <% } %>
         </ul>
     </div>
+</main>
 </body>
 </html>

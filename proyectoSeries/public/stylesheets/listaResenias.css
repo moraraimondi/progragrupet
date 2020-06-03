@@ -1,0 +1,26 @@
+main.lista{
+    margin-top: 85px;
+}
+
+div.papi{
+    display: flex;
+    justify-content: center;
+}
+
+div.mini{
+    width: 10%;
+    justify-content: center;
+}
+
+h1{
+    text-align: center;
+}
+
+div.grande{
+    display: flex;
+    justify-content: center;
+}
+
+#hola{
+    text-align: center;
+}

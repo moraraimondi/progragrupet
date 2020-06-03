@@ -5,11 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nerfli</title>
 
-    <link rel="stylesheet" href="../public/stylesheets/misReseniasLogin.css">
-    <link rel="stylesheet" href="../public/stylesheets/home.css">
+    <link rel="stylesheet" href="/stylesheets/misReseniasLogin.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
+    <link rel="stylesheet" href="/stylesheets/uikit.min.css">
 </head>
 <body>
-    <form action="/series/misResenias" method="POST">
+       <!--Include del header-->
+       <%-include('./partials/header.ejs') %>
+       <!--Include del header-->
+    <main>
+        <div class="papi">
+        <form action="/series/misResenias" method="POST">
         <h2>Logueate para ver tu reseña!</h2>
         
         <div class="uk-margin">
@@ -26,6 +32,8 @@
         <div class="uk-margin">
             <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">SUBMIT</button>
         </div>
-    </form>
+        </form>
+    </div>
+    </main> 
 </body>
 </html>

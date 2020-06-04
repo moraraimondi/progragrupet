@@ -17,6 +17,7 @@ main h2{
   width: 50%;
   margin: 0 auto 20px auto;
   border-radius: 50px;
+  font-family: cursive;
 }
 main .slider h3{
   text-transform: uppercase;
@@ -25,4 +26,5 @@ main .slider h3{
   margin-bottom: 50px;
   border-radius: 20px;
   padding: 0 5px 0 5px;
+  font-family: cursive;
 }

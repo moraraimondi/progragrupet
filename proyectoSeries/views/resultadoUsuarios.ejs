@@ -6,10 +6,15 @@
     
     <title>Nerfli</title>
 
+    <link rel="stylesheet" href="/stylesheets/buttonHeader.css">
+    <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/resultadoUsuarios.css">
 </head>
 <body>
-
+     <!--Include del header-->
+     <%-include('./partials/header.ejs') %>
+     <!--Include del header-->
+     <main>
     <h1 class="titulo">Encontramos estos resultados</h1>
     <div class="labels">
         <div class="mini-labels">
@@ -55,5 +60,6 @@
             </div>
         </div>
     <% } %>
+</main>
 </body>
 </html>

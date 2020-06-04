@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nerfli</title>
 
+    <link rel="stylesheet" href="/stylesheets/buttonHeader.css">
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/home.css">
     <link rel="stylesheet" href="/stylesheets/uikit.min.css">
@@ -21,7 +22,7 @@
     <h1>Estas son tus reseñas!</h1>
     <ul>
         <% for(i = 0; i < reviews.length; i++){ %>
-    <li><div class="hijo">
+    <li style="font-family: cursive;"><div class="hijo">
         <article class="uk-comment uk-comment-primary uk-visible-toggle" tabindex="-1">
             <header class="uk-comment-header uk-position-relative">
                 <div class="uk-grid-medium uk-flex-middle" uk-grid>
@@ -29,16 +30,19 @@
                       <img src="../public/images/avatar.png" width="80" height="80" alt="">
                     </div>
                     <div class="uk-width-expand">
-                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#"><%=reviews[i].rating%></a></h4>
-                        <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#"><%=reviews[i].createdAt%></a></p>
+                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">RATING: <%=reviews[i].rating%></a></h4>
+                        <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#">FECHA: <%=reviews[i].createdAt%></a></p>
                     </div>
                 </div>
                <!-- <div class="uk-position-top-right uk-position-small uk-hidden-hover"><a class="uk-link-muted" href="/series/login">Lleva al login</a></div> -->
             </header>
             <div class="uk-comment-body">
                 
-                <p><a href="/series/detalle?serieId=<%=reviews[i].idseries%>"> <%=reviews[i].texto%></a></p>
-                <a href="/series/editar?idReview=<%=reviews[i].idreviews%>"><button>Editar</button></a><a href="/series/borrar?idReview=<%=reviews[i].idreviews%>"><button>Borrar</button></a>
+                <h3><a class="uk-link-heading" href="/series/detalle?serieId=<%=reviews[i].idseries%>">VER PELICULA</a></h3>
+                 <p class="uk-link-muted"> <%=reviews[i].texto%> </p>
+                
+                </a>
+                <a href="/series/editar?idReview=<%=reviews[i].idreviews%>"><button class="uk-button uk-button-primary" style="font-family: cursive;border-radius: 25px;margin-right: 15px;">EDITAR</button></a><a href="/series/borrar?idReview=<%=reviews[i].idreviews%>"><button class="uk-button uk-button-danger" style="font-family: cursive;border-radius: 25px;">BORRAR</button></a>
             </div>
         </article>
       </div>

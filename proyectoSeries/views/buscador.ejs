@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nerfli</title>
+
+    <link rel="stylesheet" href="/stylesheets/buttonHeader.css">
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/buscador.css">
     <link rel="stylesheet" href="/stylesheets/uikit.min.css">
@@ -27,7 +29,7 @@
     <div class="container">
         <h3 align="center">Elige el método de busqueda que mas te guste, puedes combinar campos</h3>
         <hr>
-        <form action="/series/resultado" method="get">
+        <form action="/series/resultado" method="get" style="font-family: cursive;">
             <input type="hidden" value="e59c94a503ea78e9502aa8e308f21eb5" name="key">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Por título</label>
@@ -75,7 +77,7 @@
                     <option value="popularity.asc">Popularidad de menor a mayor</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+                    <button class="uk-button uk-button-primary uk-button-large uk-width-1-1" style="font-family: cursive;border-radius: 25px;">Submit</button>
         </form>
 
     </div>

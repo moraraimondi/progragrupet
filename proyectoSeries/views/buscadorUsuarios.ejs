@@ -16,23 +16,29 @@
     <script src="/javascripts/detalle.js" ></script>
 </head>
 <body>
+  
   <!--Include del header-->
   <%-include('./partials/header.ejs') %>
   <!--Include del header-->
-<main>
-    <h1>Encontrá a tus amigos</h1>
-    <nav class="uk-navbar-container" style="margin-top: 50px;" uk-navbar>
-        <div class="uk-navbar-left">
-    
-            <div class="uk-navbar-item">
-                <form class="uk-search uk-search-navbar" action = "/series/resultadoUsuarios" method ="GET" name="searchUser">
-                    <span uk-search-icon></span>
-                    <input class="uk-search-input" type="search" placeholder="Search..." name="searchUser">
-                </form>
+
+<main class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://i2.wp.com/wholefully.com/wp-content/uploads/2014/02/movie-theatre-popcorn.jpg" uk-img style= "height: -webkit-fill-available;
+width: -webkit-fill-available; margin: auto ;">
+    <div style="z-index: 1; background-color: indianred; opacity: 0.8;">
+        <h1>Encontrá a tus amigos</h1>
+        <nav class="uk-navbar-container" style="margin-top: 50px;" uk-navbar>
+            <div class="uk-navbar-left" style="background-color: indianred;">
+        
+                <div class="uk-navbar-item">
+                    <form class="uk-search uk-search-navbar" action = "/series/resultadoUsuarios" method ="GET" name="searchUser">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input" type="search" placeholder="Search..." name="searchUser">
+                    </form>
+                </div>
+        
             </div>
-    
-        </div>
-    </nav>
+        </nav>
+    </div>    
+
 </main>
     
 </body>

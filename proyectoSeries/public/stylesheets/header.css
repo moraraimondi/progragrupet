@@ -4,7 +4,7 @@ header nav {
 	height: 85px;
 	background-color: white;
 	z-index: 999;
-	box-shadow: -2px -2px 5px white, 2px 2px 5px white;
+	box-shadow: -2px -2px 5px black, 2px 2px 5px crimson;
 	position: fixed;
 	top: 0;
 	left: 0;

@@ -1,10 +1,25 @@
 main{
-    margin-top: 85px;
+    margin: 55px;
+    padding: 35px;
 }
 
 img.avatar{
     float: left;
     margin-left: 4px;
-    height: 250px;
+    height: 270px;
     width: 250px;
+    border-style: groove;
+    border-color: crimson;
+    border-radius: 6px;
+}
+
+.hijos {
+    padding-left: 300px;
+    color: black;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.papi {
+    padding: 10px;
 }

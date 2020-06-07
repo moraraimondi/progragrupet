@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color:rgb(115, 115, 115);">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
     <br>
     <br>
     <div class="papi">
-        <div class="hijos">
+        <div class="mini">
             <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png" alt="" class="avatar">
         </div>
         <div class="hijos">
@@ -37,14 +37,14 @@
         <div class="hijos">
             <p>Cumpleaños: <%=usuario.birthday %></p>
         </div>
-        <div class="mini">
+        <div class="hijos">
             <% if(usuario.genero_fav == null){%>
                 <p>No tengo género favorito</p>
             <% } else {%>
             <a href="/series/porGenero?genreId=<%=usuario.genero_fav %>"><p>Género Favorito</p></a>
             <% } %>
         </div>
-        <div class="mini">
+        <div class="hijos">
             <% if(usuario.serie_fav == null){%>
                 <p>No tengo serie favorita</p>
             <% } else {%>
@@ -57,7 +57,7 @@
     <br>
     <br>
     <div class="resenias">
-        <h2> Tus reseñas</h2>
+        <h2> Tus reseñas:</h2>
         <ul>
             <% for(i = 0; i < usuario.reviews.length; i++){ %>
                 <% if(usuario.reviews[i].texto == null){%>

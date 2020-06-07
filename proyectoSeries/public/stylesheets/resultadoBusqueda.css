@@ -1,10 +1,12 @@
 main{
   margin-top: 85px;
+  background-color: rgb(115, 115, 115);
 }
 #resultados div{
   width: 30%;
   text-align: center;
-  border: 1px solid black;
+  border: groove crimson;
+  border-radius: 6px;
   padding: 1px;
 }
 #resultados div img{

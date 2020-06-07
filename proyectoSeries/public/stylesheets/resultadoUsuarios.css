@@ -1,5 +1,6 @@
 body{
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    background-color: lightblue;
+    font-family: cursive;
 }
 h1.titulo{
     text-align: center;
@@ -8,6 +9,11 @@ h1.titulo{
 
 div.resultado-usuarios{
     display: flex;
+    border: solid;
+    border-width: thin;
+    border-color: crimson;
+    border-radius: 7px;
+    padding-left: 20px;
 }
 
 div.mini{
@@ -15,9 +21,24 @@ div.mini{
     justify-content: space-around;
     flex-wrap: wrap;
 }
+div.mini a{
+    
+    color: black;
+    font-size: 22px;
+}
+div.mini a:hover {
+    color: crimson;
+  }
+  div.mini a:active {
+    color: blue;
+  }
+
 
 div.labels{
     display: flex;
+    border-style: double;
+    margin-bottom: 15px;
+    padding-left: 35px;
 }
 
 div.mini-labels{

@@ -1,13 +1,15 @@
 main{
   margin-top: 85px;
+  background-color: rgb(115, 115, 115);
 }
 main .grilla-series div{
   width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid black;
   margin-bottom: 10px;
+  border: groove crimson;
+  border-radius: 6px;
 }
 main .grilla-series div a{
   text-align: center;

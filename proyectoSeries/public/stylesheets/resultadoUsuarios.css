@@ -1,6 +1,7 @@
 body{
-    background-color: lightblue;
-    font-family: cursive;
+    background-color: rgb(247, 247, 247);
+    font-family: sans-serif;
+    f
 }
 h1.titulo{
     text-align: center;
@@ -9,10 +10,6 @@ h1.titulo{
 
 div.resultado-usuarios{
     display: flex;
-    border: solid;
-    border-width: thin;
-    border-color: crimson;
-    border-radius: 7px;
     padding-left: 20px;
 }
 
@@ -22,9 +19,7 @@ div.mini{
     flex-wrap: wrap;
 }
 div.mini a{
-    
     color: black;
-    font-size: 22px;
 }
 div.mini a:hover {
     color: crimson;
@@ -36,9 +31,10 @@ div.mini a:hover {
 
 div.labels{
     display: flex;
-    border-style: double;
     margin-bottom: 15px;
     padding-left: 35px;
+    font-weight: bold;
+    color: crimson;
 }
 
 div.mini-labels{

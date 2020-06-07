@@ -1,11 +1,34 @@
+main{
+    margin-top: 85px;
+}
 h1{
     text-align: center;
 }
 
 nav.uk-navbar-container{
-    display: flexbox;
+    display: flex;
 }
 
 div.uk-navbar-item{
     justify-content: center;
+}
+
+input.uk-search-input{
+    font-family: sans-serif ;
+}
+
+.uk-navbar-container:not(.uk-navbar-transparent){
+    background: white !important;
+}
+h1{
+    font-family: sans-serif !important;
+}
+
+body{
+    background-color: white !important;
+}
+
+img{
+    width: 500px;
+    height: 300px;
 }

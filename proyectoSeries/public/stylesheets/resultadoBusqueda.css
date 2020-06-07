@@ -1,6 +1,16 @@
 main{
   margin-top: 85px;
-  background-color: rgb(115, 115, 115);
+  background-color: rgb(247, 247, 247);
+  font-family: sans-serif;
+}
+
+h1.a{
+  font-family: sans-serif;
+  text-align: center;
+}
+
+h2{
+  font-family: sans-serif !important;
 }
 #resultados div{
   width: 30%;

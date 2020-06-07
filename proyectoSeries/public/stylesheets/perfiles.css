@@ -3,9 +3,6 @@ img.avatar{
     margin-left: 4px;
     height: 270px;
     width: 250px;
-    border-style: groove;
-    border-color: crimson;
-    border-radius: 6px;
 }
 
 .hijos {
@@ -17,13 +14,6 @@ img.avatar{
 
 .papi {
     padding: 10px;
-    background-color: indianred; 
-    opacity: 0.88;
-}
-
-.resenias{
-    background-color: indianred; 
-    opacity: 0.88;
 }
 
   div.papi a:hover {
@@ -38,5 +28,14 @@ img.avatar{
   }
   div.resenias a:active {
     color: blue;
+  }
+
+  p{
+    font-family: sans-serif !important;
+  }
+
+  h2{
+    font-family: sans-serif !important;
+    color: black !important;
   }
 

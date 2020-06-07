@@ -19,24 +19,22 @@
      <!--Include del header-->
      <%-include('./partials/header.ejs') %>
      <!--Include del header-->
-    <main class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://i2.wp.com/wholefully.com/wp-content/uploads/2014/02/movie-theatre-popcorn.jpg" uk-img style="height: fit-content;
-    width: -webkit-fill-available;margin: auto;display: inline-grid;">
-    <h1 style="margin-top: 115px;margin-left: 35px;background-color: indianred;text-align: center;
-    border-radius: 8px; box-shadow: inset -2px -2px 20px 4px black, 0px 0px 10px 4px indianred;
-    padding: 10px;">Estas son tus reseñas!</h1>
+    <main>
+    <br>
+    <h1>Estas son tus reseñas</h1>
     <ul style="width: 580px;opacity: 0.8;">
         <% for(i = 0; i < reviews.length; i++){ %>
-    <li style="font-family: cursive;"><div class="hijo">
-        <article class="uk-comment uk-comment-primary uk-visible-toggle" tabindex="-1" style="background-color: indianred;
-        border-style: dotted;">
+    <li>
+        <div class="hijo">
+        <article class="uk-comment uk-comment-primary uk-visible-toggle" tabindex="-1">
             <header class="uk-comment-header uk-position-relative">
                 <div class="uk-grid-medium uk-flex-middle" uk-grid>
                     <div class="uk-width-auto">
-                      <img src="../public/images/avatar.png" width="80" height="80" alt="">
+                      <img src="/images/avatar.png" width="80" height="80" alt="">
                     </div>
                     <div class="uk-width-expand">
-                        <h4 class="uk-comment-title uk-margin-remove" style="color: white;"><a class="uk-link-reset" href="#">RATING: <%=reviews[i].rating%></a></h4>
-                        <p class="uk-comment-meta uk-margin-remove-top" style="color: white;"><a class="uk-link-reset" href="#">FECHA: <%=reviews[i].createdAt%></a></p>
+                        <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">RATING: <%=reviews[i].rating%></a></h4>
+                        <p class="uk-comment-meta uk-margin-remove-top"><a class="uk-link-reset" href="#">FECHA: <%=reviews[i].createdAt%></a></p>
                     </div>
                 </div>
                <!-- <div class="uk-position-top-right uk-position-small uk-hidden-hover"><a class="uk-link-muted" href="/series/login">Lleva al login</a></div> -->
@@ -46,14 +44,14 @@
                 <h3>
                     <a class="uk-link-heading" href="/series/detalle?serieId=<%=reviews[i].idseries%>">VER PELICULA</a>
                 </h3>
-                 <p class="uk-link-muted" style="color: white;"> <%=reviews[i].texto%> </p>
+                 <p class="uk-link-muted"> <%=reviews[i].texto%> </p>
                 
                 </a>
                 <a href="/series/editar?idReview=<%=reviews[i].idreviews%>">
-                    <button class="uk-button uk-button-primary" style="font-family: cursive;border-radius: 25px;margin-right: 15px;background-color: black;color: white;box-shadow: 0px 0px 15px 3px white;">EDITAR</button>
+                    <button class="uk-button uk-button-primary">EDITAR</button>
                 </a>
                 <a href="/series/borrar?idReview=<%=reviews[i].idreviews%>">
-                    <button class="uk-button uk-button-danger" style="font-family: cursive;border-radius: 25px;">BORRAR</button>
+                    <button class="uk-button uk-button-danger">BORRAR</button>
                 </a>
             </div>
         </article>
@@ -62,5 +60,12 @@
             <%}%>
     </ul>
 </main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 </body>
 </html>

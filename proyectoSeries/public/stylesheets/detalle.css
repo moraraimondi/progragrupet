@@ -1,6 +1,6 @@
 main{
   margin-top: 85px;
-  background-color: rgb(115, 115, 115);
+  background-color: rgb(247, 247, 247);
 }
 .dataSerie h1, .dataSerie p, .dataSerie h3, .dataSerie a {
   color: black;
@@ -37,14 +37,13 @@ div.uk-margin{
   width: 50%;
 }
 
-.padre{
-  width: 60%;
-  padding-left: 220px;
+div.chico{
+  margin-left: 2%;
 }
 
-.hijo{
-  border-style: double;
-  border-color: crimson;
+.padre{
+  width: 60%;
+  justify-content: center;
 }
 
 div.mini{
@@ -53,14 +52,21 @@ div.mini{
 
 button.uk-button-primary{
   justify-content: center;
+  border-radius: 0%;
 }
 
 ul.uk-comment-list{
   margin-right: 2%;
 }
 
-img{
-  border-style: groove;
-  border-color: crimson;
-  border-radius: 6px;
+h1{
+  font-family: sans-serif !important;
+}
+
+h2{
+  font-family: sans-serif !important;
+}
+
+h3{
+  font-family: sans-serif !important;
 }

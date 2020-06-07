@@ -1,3 +1,17 @@
+body{
+  font-family: sans-serif;
+}
+
+div.container{
+  padding: 12px;
+  margin-top: 115px;
+}
+
+h3.titulo{
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
 header{
   margin-bottom: 85px
 }

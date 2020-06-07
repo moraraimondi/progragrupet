@@ -1,12 +1,13 @@
 main{
     margin-top: 200px;
+    font-family: sans-serif;
 }
 
 div.papi{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: cursive;
+    font-family: sans-serif;
 }
 
 div.uk-margin{

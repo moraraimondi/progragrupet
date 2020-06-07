@@ -1,8 +1,3 @@
-main{
-    margin: 55px;
-    padding: 35px;
-}
-
 img.avatar{
     float: left;
     margin-left: 4px;
@@ -22,4 +17,26 @@ img.avatar{
 
 .papi {
     padding: 10px;
+    background-color: indianred; 
+    opacity: 0.88;
 }
+
+.resenias{
+    background-color: indianred; 
+    opacity: 0.88;
+}
+
+  div.papi a:hover {
+    color: black;
+  }
+  div.papi a:active {
+    color: blue;
+  }
+
+  div.resenias a:hover {
+    color: black;
+  }
+  div.resenias a:active {
+    color: blue;
+  }
+

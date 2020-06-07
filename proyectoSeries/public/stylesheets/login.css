@@ -1,12 +1,15 @@
 button.uk-button{
-    background-color:rgb(196, 40, 78);
+    box-shadow: inset -2px -2px 12px 5px black, 0px 0px 10px 4px crimson;
+    background-color: crimson;
 }
 
-button.uk-button:hover{
-    background-color: white;
-    color: rgb(196, 40, 78);
-
-}
+button.uk-button:hover {
+    background-color: black;
+    color: white;
+  }
+button.uk-button:active {
+        background-color: crimson;
+  }
 
 body{
     margin-top: 85px;

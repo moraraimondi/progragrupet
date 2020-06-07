@@ -1,0 +1,9 @@
+h3:hover{
+    width: fit-content;
+    background-color: darkblue;
+}
+
+button.uk-button-danger{
+    background-color: red;
+    box-shadow: 0px 0px 15px 3px black;
+}

@@ -24,13 +24,14 @@
   <%-include('./partials/header.ejs') %>
 <!--Include del header-->
 
-    <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+    <div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport style="background-color: lightblue;">
         <div class="uk-width-1-1">
             <div class="uk-container">
                 <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
                     <div class="uk-width-1-1@m">
-                        <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
-                            <h3 class="uk-card-title uk-text-center">Logueate para borrar tu review</h3>
+                        <div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large" style="border-radius: 15px;
+                        border-color: crimson;border-style: double;font-family: cursive;">
+                            <h3 class="uk-card-title uk-text-center" style="font-family: cursive;">Logueate para borrar tu review</h3>
                             <form action="/series/borrar" method="POST">
                                 <div class="uk-margin">
                                     <div class="uk-inline uk-width-1-1">
@@ -44,7 +45,8 @@
                                     </div>
                                 </div>
                                 <div class="uk-margin">
-                                    <button class="uk-button uk-button-danger uk-button-large uk-width-1-1" style="font-family: cursive;border-radius: 25px;">BORRAR</button>
+                                    <button class="uk-button uk-button-danger uk-button-large uk-width-1-1" style="font-family: cursive;border-radius: 25px;box-shadow: inset -2px -2px 12px 5px black, 0px 0px 10px 4px crimson;
+                                    background-color: crimson;">BORRAR</button>
                                 </div>
                             </form>
                         </div>

@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="/stylesheets/misReseniasLogin.css">
     <link rel="stylesheet" href="/stylesheets/header.css">
     <link rel="stylesheet" href="/stylesheets/uikit.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.8/css/uikit.css">
+
+    <script src="/javascripts/uikit-icons.min.js" ></script>
+    <script src="/javascripts/uikit.min.js" ></script>
+    <script src="/javascripts/home.js" ></script>
+    <script src="/javascripts/misReseniaslogin.js"></script>
+    <script src="/javascripts/generosFavoritos.js" ></script>
 </head>
 <!--Include del header-->
 <%-include('./partials/header.ejs') %>
@@ -19,17 +26,17 @@
         <br>
         <br>
         <div class="papi">
-        <form action="/series/loginreal" method="POST" class="login">
+        <form id="formlogin" action="/series/loginreal" method="POST" class="login">
         <h2>Logueate para ver tu reseña!</h2>
         
         <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-                <input class="uk-input uk-form-large" placeholder= "Email" type="text" name="email">
+                <input class="uk-input uk-form-large" placeholder= "Email" type="text" name="email" id="email">
             </div>
         </div>
         <div class="uk-margin">
             <div class="uk-inline uk-width-1-1">
-                <input class="uk-input uk-form-large" placeholder= "Password" type="password" name="password">
+                <input class="uk-input uk-form-large" placeholder= "Password" type="password" name="password" id="contra">
             </div>
         </div>
         <% if(error != null){%>

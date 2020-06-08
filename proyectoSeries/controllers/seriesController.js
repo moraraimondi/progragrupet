@@ -82,15 +82,16 @@ let seriesController = {
          })
           
     },
-    misReseniasLogin: function(req,res){
-        res.render('misReseniasLogin')
+    misReseniasLogin: function(req,res){ //Muestrab formulario de login
+        let error
+        res.render('misReseniasLogin', {error:error}) 
     },
-    LogInReal: function(req,res){
+    LogInReal: function(req,res){ //procesa data del formulario de login para crear la session
         moduloLogin.validar(req.body.email, req.body.password)
         .then(function(resultado){
            if (resultado != null){
-               req.session.usuarioLogeado = req.body.email
-               res.redirect('/series/misReseniasTodas')
+               req.session.usuarioLogeado = req.body.email //Guarda el email del usuario en la variable usuarioLogeado
+               res.redirect('/series/misReseniasTodas') //Te manda a la seccion de tus resenias
            }else{
                let error = 'Ingresaste mal tus datos.'
                return res.render('misReseniasLogin', {error:error})
@@ -99,13 +100,13 @@ let seriesController = {
         })   
 
     }, 
-    logOut: function (req, res) {
+    logOut: function (req, res) { //Destruye la variable guardada en session
         req.session.destroy();
         res.redirect("/series/home")
     },
 
-    misResenias: function(req,res){
-        if(req.session.usuarioLogeado){
+    misResenias: function(req,res){ //Carga las resenias para el email del usuarioLogeaado
+        if(req.session.usuarioLogeado){ 
             moduloLogin.buscarPorEmail(req.session.usuarioLogeado)
             .then(function(resultado){
                 console.log(resultado);
@@ -126,7 +127,7 @@ let seriesController = {
                 res.render("misResenias", {reviews: reviews})
             })        
         }else{
-            res.redirect("/series/loginreal")
+            res.redirect("/series/misResenias")
         } 
     },
     editar: function(req,res){

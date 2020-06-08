@@ -32,7 +32,11 @@
                 <input class="uk-input uk-form-large" placeholder= "Password" type="password" name="password">
             </div>
         </div>
-        
+        <% if(error != null){%>
+            <div class="uk-inline uk-width-1-1">
+                <p><%=error%></p>
+            </div>
+        <%}%>
         <div class="uk-margin">
             <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">SUBMIT</button>        
         </div>

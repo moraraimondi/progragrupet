@@ -18,11 +18,10 @@ router.post('/login', seriesController.genero_fav);
 router.get('/perfil', seriesController.perfil);
 
 router.get('/misResenias', seriesController.misReseniasLogin);
-router.post('/misResenias', seriesController.misResenias);
+router.get('/misReseniasTodas', seriesController.misResenias);
 router.get('/editar', seriesController.editar);
 router.post('/editar', seriesController.confirmarEdit);
 router.get('/borrar', seriesController.borrarLogIn);
-router.post('/borrar', seriesController.borrar)
 
 router.get('/lista', reseniasController.listaResenias);
 router.get('/mejores', reseniasController.mejores);
@@ -32,5 +31,7 @@ router.get('/recientes', reseniasController.recientes);
 router.get('/usuarios', seriesController.usuarios);
 router.get('/resultadoUsuarios', seriesController.resultadoUsuarios);
 router.get('/detalleUsuarios', seriesController.detalleUsuarios);
+router.post('/loginreal', seriesController.LogInReal);
+router.get("/logOut", seriesController.logOut);
 
 module.exports = router;

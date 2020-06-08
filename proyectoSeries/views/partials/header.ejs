@@ -6,7 +6,11 @@
             <li class="menu-item"><a class="color-violet" href="/series/generos">Géneros</a></li>
             <li class="menu-item"><a class="color-violet" href="/series/buscador">Buscador</a></li>
             <li class="menu-item"><a class="color-violet" href="/series/login">Registrate</a></li>
-            <li class="menu-item"><a class="color-violet" href="/series/misResenias">Mis Reseñas</a></li>
+            <% if(usuarioLogeado){%>
+                <li class="menu-item"><a class="color-violet" href="/series/misReseniasTodas">Mis Reseñas</a></li>
+            <%}else{%>
+                <li class="menu-item"><a class="color-violet" href="/series/misResenias">Log in</a></li>
+            <%}%>
             <li class="menu-item"><a class="color-violet" href="/series/usuarios">Comunidad</a></li>
             <li class="menu-item"><a class="color-violet" href="/series/lista">Reseñas</a></li>
             <li class="menu-item search">

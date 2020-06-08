@@ -84,40 +84,35 @@
         </div>
 <div class="form">
   <div class="mini">
-  <form action="/series/detalle" method="POST">
-    <h2 class="resenia">Dejá tu reseña</h2>
-    <input type="hidden" name="id_serie" value="<%=id_serie%>">
-    <div class="uk-margin">
-        <div class="uk-inline uk-width-1-1">
-            <input class="uk-input uk-form-large" placeholder= "Email" type="text" name="email">
+    <%if(usuarioLogeado){%>
+
+      <form action="/series/detalle" method="POST">
+        <h2 class="resenia">Dejá tu reseña</h2>
+        <input type="hidden" name="id_serie" value="<%=id_serie%>">
+        <div class="uk-margin">
+            <div class="uk-inline uk-width-1-1">
+                <input class="uk-input uk-form-large" placeholder="Comment" type="text" name="comment">	
+            </div>
         </div>
-    </div>
-    <div class="uk-margin">
-        <div class="uk-inline uk-width-1-1">
-            <input class="uk-input uk-form-large" placeholder= "Password" type="password" name="password">
+        <div class="uk-margin">
+            <div class="uk-inline uk-width-1-1">
+                <input class="uk-input uk-form-large" list ="score" placeholder= "Score" type="text" name="score">
+                <datalist id="score">
+                  <option value="1">
+                  <option value="2">
+                  <option value="3">
+                  <option value="4">
+                  <option value="5">
+                </datalist>
+            </div>
         </div>
-    </div>
-    <div class="uk-margin">
-        <div class="uk-inline uk-width-1-1">
-            <input class="uk-input uk-form-large" placeholder="Comment" type="text" name="comment">	
+        <div class="uk-margin">
+            <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">SUBMIT</button>
         </div>
-    </div>
-    <div class="uk-margin">
-        <div class="uk-inline uk-width-1-1">
-            <input class="uk-input uk-form-large" list ="score" placeholder= "Score" type="text" name="score">
-            <datalist id="score">
-              <option value="1">
-              <option value="2">
-              <option value="3">
-              <option value="4">
-              <option value="5">
-            </datalist>
-        </div>
-    </div>
-    <div class="uk-margin">
-        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">SUBMIT</button>
-    </div>
-</form>
+    </form>
+    <%}else{%>
+      <a href="/series/misResenias">Logueate para dejar tu propia resenia</a>
+    <%}%>
 </div>
 </div>
 

@@ -59,58 +59,83 @@ let seriesController = {
     perfil: function(req, res){
         res.render('perfilResenias')
     },
-    nuevaReview: function(req,res){
-        moduloLogin.validar(req.body.email, req.body.password)
-        .then(resultado=> {        
-            if(resultado != null){
-                let id_usuarios = resultado.id_usuarios
-                let review = {
-                    idseries: req.body.id_serie,
-                    id_usuarios: id_usuarios,
-                    rating: req.body.score,
-                    texto: req.body.comment,
-                    createdAt: db.sequelize.literal("CURRENT_DATE"),
-                    updatedAt: db.sequelize.literal("CURRENT_DATE"),
-                  }
-                  console.log(review)
-                  db.reviews.create(review)
-                res.redirect('/series/detalle?serieId=' + req.body.id_serie)
-          } else{
-            return res.send("error")
-          }
-          })
+    nuevaReview: function(req,res){      
+        db.usuarios.findOne({        
+            where:{
+                email: req.session.usuarioLogeado,
+            },
+         })
+         .then(function(usuario){
+           let id_user = usuario.id_usuarios
+           let review = {
+             idseries: req.body.id_serie,
+             id_usuarios: id_user,
+             rating: req.body.score,
+             texto: req.body.comment,
+             createdAt: db.sequelize.literal("CURRENT_DATE"),
+             updatedAt: db.sequelize.literal("CURRENT_DATE"),
+           }  
+           db.reviews.create(review)
+           .then(function(){
+           return res.redirect("/series/detalle?serieId=" + req.body.id_serie)
+           })                     
+         })
+          
     },
     misReseniasLogin: function(req,res){
         res.render('misReseniasLogin')
     },
-    misResenias: function(req,res){
+    LogInReal: function(req,res){
         moduloLogin.validar(req.body.email, req.body.password)
         .then(function(resultado){
-            let id_usuarios = resultado.id_usuarios
-            return id_usuarios
-        }) 
-        .then(function(id_usuarios){
-            let reviews = db.reviews.findAll({
-                where:{
-                    id_usuarios: id_usuarios,
-                },
-             })
-             return reviews
-        })
-        .then(function(reviews){
-            res.render('misResenias', {reviews:reviews})
-        })
+           if (resultado != null){
+               req.session.usuarioLogeado = req.body.email
+               res.redirect('/series/misReseniasTodas')
+           }else{
+               let error = 'Ingresaste mal tus datos.'
+               return res.render('misReseniasLogin', {error:error})
+
+           }
+        })   
+
+    }, 
+    logOut: function (req, res) {
+        req.session.destroy();
+        res.redirect("/series/home")
+    },
+
+    misResenias: function(req,res){
+        if(req.session.usuarioLogeado){
+            moduloLogin.buscarPorEmail(req.session.usuarioLogeado)
+            .then(function(resultado){
+                console.log(resultado);
+                let id = resultado.id_usuarios
+                console.log(id);           
+                return id
+            })          
+            .then(function(id){
+                console.log(id);
+                let reviews = db.reviews.findAll({
+                    where : {id_usuarios: id}
+                    })   
+                return reviews
+            })       
+            .then(function(reviews){
+                console.log(req.session.usuarioLogeado);
+                
+                res.render("misResenias", {reviews: reviews})
+            })        
+        }else{
+            res.redirect("/series/loginreal")
+        } 
     },
     editar: function(req,res){
         let idreviews = req.query.idReview
         res.render("editar", {idreviews: idreviews})
     },
     confirmarEdit: function(req,res){
-        moduloLogin.validar(req.body.email, req.body.password)
-        .then(function(resultado){
-            if(resultado != null){
-            id = req.body.idreviews;
-            db.reviews.update({
+        id = req.body.idreviews;
+        db.reviews.update({
             texto: req.body.texto,
             rating: req.body.rating,
             updatedAt: db.sequelize.literal("CURRENT_DATE"),
@@ -119,33 +144,18 @@ let seriesController = {
             where: {idreviews: id}
         })
         .then(function(){
-            res.redirect("/series/misResenias")
+        res.redirect("/series/misReseniasTodas")
         })
-            }else{
-                res.render("editar")
-            }
-        }) 
     },
-    borrar: function(req,res){
-        moduloLogin.validar(req.body.email, req.body.password)
-        .then(function(resultado){
-            if(resultado != null){
-            id = req.body.idreviews;
-            db.reviews.destroy(
-        {
+
+    borrarLogIn: function(req,res){
+        let id = req.query.idReview
+        db.reviews.destroy({
             where: {idreviews: id}
         })
         .then(function(){
-            res.redirect("/series/misResenias")
+            res.redirect("/series/misReseniasTodas")
         })
-            }else{
-                res.render("borrar")
-            }
-        }) 
-    },
-    borrarLogIn: function(req,res){
-        let idreviews = req.query.idReview
-        res.render("borrar", {idreviews: idreviews})
     },
     usuarios: function(req,res){
         res.render('buscadorUsuarios')

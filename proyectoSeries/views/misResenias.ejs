@@ -15,10 +15,11 @@
     <script src="/javascripts/uikit.min.js" ></script>
     <script src="/javascripts/home.js" ></script>
 </head>
+  <!--Include del header-->
+  <%-include('./partials/header.ejs') %>
+  <!--Include del header-->
 <body>
-     <!--Include del header-->
-     <%-include('./partials/header.ejs') %>
-     <!--Include del header-->
+    
     <main>
     <br>
     <a class="uk-button uk-button-default" href="/series/logOut" id="logout">LogOut</a>
@@ -43,7 +44,7 @@
             <div class="uk-comment-body">
                 
                 <h3>
-                    <a class="uk-link-heading" href="/series/detalle?serieId=<%=reviews[i].idseries%>">VER PELICULA</a>
+                    <a class="uk-link-heading" href="/series/detalle?serieId=<%=reviews[i].idseries%>">VER SERIE</a>
                 </h3>
                  <p class="uk-link-muted"> <%=reviews[i].texto%> </p>
                 

@@ -4,3 +4,39 @@ button {
     border-color: crimson;
     border-width: 4px;
 }
+
+main.error{
+    margin-top: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+h2.error{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: crimson;
+}
+
+h2.error:hover{
+    color: black;
+}
+
+a.error:hover{
+    text-decoration: none;
+    color: black;
+}
+
+div.error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: rgba(255, 166, 166);
+    flex-wrap: wrap;
+}
+
+div.mini{
+    width: 100%;
+}
